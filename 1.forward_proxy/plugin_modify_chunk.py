@@ -39,10 +39,10 @@ class ModifyChunkResponsePlugin(HttpProxyBasePlugin):
             # otherwise queue the original response to client
             if self.response.is_chunked_encoded:
                 self.response.body = b'\n'.join(self.DEFAULT_CHUNKS) + b'\n'
-            # print(self.response.body)
-            self.response.body = self.response.body + b'hahaha \n'
+            # count "software", replace "software" and append count result
+            c = self.response.body.decode('utf-8').count('software')
+            self.response.body = self.response.body.decode('utf-8').replace('software', '').encode(
+                'utf-8') + '\n "Software" Count: {} \n'.format(c).encode('utf-8')
             self.client.queue(memoryview(self.response.build_response()))
         # Avoid returning chunk straight to client
-        # print(self.response)
-        # print(chunk)
         return None
