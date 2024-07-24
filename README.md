@@ -24,3 +24,13 @@ python simple_proxy2.py
 ```bash
 curl -x http://localhost:9919 --cacert  ca-cert.pem https://en.wikipedia.org/wiki/Proxy_server -vvv
 ```
+untuk mengubah *response_content* perlu menggunakan ca certificate untuk melakukan TLS Interception
+
+
+## 2. Wikipedia Scraper
+Untuk menggunakan bash script, ubah lokasi variabel **scraper_path** dan **python_path** dalam run_scraper.sh
+
+```bash
+./run_scraper.sh "michael jackson"
+./run_scraper.sh "michael jackson" "http://localhost:9919"
+```

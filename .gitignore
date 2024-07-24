@@ -1,3 +1,4 @@
 *.pyc
 requirements2.txt
 soup.ipynb
+2.scraper/result-*.json
