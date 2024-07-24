@@ -16,7 +16,6 @@ def scrape_wikipedia(q: str, save_path: str = os.path.abspath(os.getcwd()), prox
             "http": proxy,
             "https": proxy
         }
-    print(proxies)
 
     resp = requests.get(url.format(q.replace(' ', '+')), proxies=proxies)
     soup = BeautifulSoup(resp.content, features='html.parser')
