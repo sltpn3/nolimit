@@ -37,4 +37,10 @@ def scrape_wikipedia(url: str):
 
 
 if __name__ == '__main__':
-    scrape_wikipedia('https://en.wikipedia.org/wiki/Proxy_server')
+    parser = argparse.ArgumentParser(description='Wikipedia Scraper',
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('-u', '--url', metavar='', type=str,
+                        help='URL', required=True)
+    args = parser.parse_args()
+    # https://en.wikipedia.org/wiki/Proxy_server
+    scrape_wikipedia(args.url)
