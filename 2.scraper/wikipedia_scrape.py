@@ -34,6 +34,7 @@ def scrape_wikipedia(q: str, save_path: str = os.path.abspath(os.getcwd()), prox
         i += 1
 
     with open("{}/result-{}.json".format(save_path, i), 'w') as f:
+        print("{}/result-{}.json".format(save_path, i)+ ' saved')
         f.write(json.dumps(results, indent=4))
 
 
