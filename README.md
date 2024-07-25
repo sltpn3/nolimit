@@ -34,3 +34,10 @@ Untuk menggunakan bash script, ubah lokasi variabel **scraper_path** dan **pytho
 ./run_scraper.sh "michael jackson"
 ./run_scraper.sh "michael jackson" "http://localhost:9919"
 ```
+
+## 3. Wikipedia Scraper 2
+```bash
+python wikipedia_scraper2.py -u https://en.wikipedia.org/wiki/Proxy_server
+```
+Scraper ini terbatas hanya pada halaman wiki Wikipedia.
+Scraper lebih baik bila melakukan subscribe pada suatu MQ sehingga dapat dimonitor task yang sedang dilakukan serta berapa task yang tersisa. 
